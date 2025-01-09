@@ -22,6 +22,7 @@ class CharacterResource extends JsonResource
             'date_of_birth' => $this->date_of_birth,
             'position_job' => $this->position_job,
             'description' => $this->description,
+            'image' => ImageResource::make($this->whenLoaded('image')),
         ];
     }
 }

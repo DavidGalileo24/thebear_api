@@ -14,4 +14,10 @@ class Character extends Model
         'position_job', 
         'description',
     ];
+
+
+    public function image()
+    {
+        return $this->morphOne(Image::class, 'imageable');
+    }
 }
