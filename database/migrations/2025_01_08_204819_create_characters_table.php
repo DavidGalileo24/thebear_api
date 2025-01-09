@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('nickname');
             $table->string('gender'); // enum
             $table->date('date_of_birth');
-            $table->string('position_job'); // enum
+            $table->string('job_position'); // enum
+            $table->foreignId('country_id')->constrained();
             $table->text('description')->nullable();
             $table->timestamps();
         });

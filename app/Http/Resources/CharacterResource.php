@@ -20,9 +20,10 @@ class CharacterResource extends JsonResource
             'nickname' => $this->nickname,
             'gender' => $this->gender,
             'date_of_birth' => $this->date_of_birth,
-            'position_job' => $this->position_job,
-            'description' => $this->description,
+            'job_position' => $this->job_position,
             'image' => ImageResource::make($this->whenLoaded('image')),
+            'country' => new CountryResource($this->whenLoaded('country')),
+            'description' => $this->description,
         ];
     }
 }
