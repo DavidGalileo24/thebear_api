@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('fullname');
             $table->string('nickname');
-            $table->string('gender'); //enum
+            $table->string('gender'); // enum
             $table->date('date_of_birth');
-            $table->string('position_job'); //enum
+            $table->string('position_job'); // enum
             $table->text('description')->nullable();
             $table->timestamps();
         });

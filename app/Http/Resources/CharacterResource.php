@@ -16,11 +16,11 @@ class CharacterResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'fullname' => $this->fullname, 
-            'nickname' => $this->nickname, 
-            'gender' => $this->gender, 
-            'date_of_birth' => $this->date_of_birth, 
-            'position_job' => $this->position_job, 
+            'fullname' => $this->fullname,
+            'nickname' => $this->nickname,
+            'gender' => $this->gender,
+            'date_of_birth' => $this->date_of_birth,
+            'position_job' => $this->position_job,
             'description' => $this->description,
         ];
     }
