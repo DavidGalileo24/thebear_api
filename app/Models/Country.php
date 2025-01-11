@@ -11,7 +11,8 @@ class Country extends Model
         'description',
     ];
 
-    public function character(){
+    public function character()
+    {
         return $this->hasMany(Character::class);
     }
 }

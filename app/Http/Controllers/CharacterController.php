@@ -11,6 +11,8 @@ class CharacterController extends Controller
     public function index()
     {
         $data = Character::orderBy('id', 'desc')->get();
+        $data->load('country');
+        $data->load('image');
 
         return CharacterResource::collection($data);
     }
@@ -28,6 +30,7 @@ class CharacterController extends Controller
             'gender' => $request->gender,
             'date_of_birth' => $request->date_of_birth,
             'job_position' => $request->job_position,
+            'country_id' => $request->country_id,
             'description' => $request->description,
         ]);
 
@@ -42,6 +45,7 @@ class CharacterController extends Controller
             'gender' => $request->gender,
             'date_of_birth' => $request->date_of_birth,
             'job_position' => $request->job_position,
+            'country_id' => $request->country_id,
             'description' => $request->description,
         ]);
 

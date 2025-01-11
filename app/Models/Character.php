@@ -21,7 +21,8 @@ class Character extends Model
         return $this->morphOne(Image::class, 'imageable');
     }
 
-    public function country(){
+    public function country()
+    {
         return $this->belongsTo(Country::class);
     }
 }
