@@ -1,4 +1,5 @@
 import { Head, Link } from '@inertiajs/react';
+import Home from '@/Pages/Web/Home';
 
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
     const handleImageError = () => {
@@ -15,7 +16,7 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
     return (
         <>
             <Head title="The bear api" />
-            <p className=''>Home</p>
+            <Home />
         </>
     );
 }
