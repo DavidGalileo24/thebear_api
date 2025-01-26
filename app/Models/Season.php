@@ -11,4 +11,9 @@ class Season extends Model
         'description',
         'release_date',
     ];
+
+    public function characters()
+    {
+        return $this->hasMany(Character::class);
+    }
 }

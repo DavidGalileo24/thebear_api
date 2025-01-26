@@ -13,6 +13,7 @@ class Character extends Model
         'date_of_birth',
         'job_position',
         'country_id',
+        'season_id',
         'description',
     ];
 
@@ -24,5 +25,10 @@ class Character extends Model
     public function country()
     {
         return $this->belongsTo(Country::class);
+    }
+
+    public function season()
+    {
+        return $this->belongsTo(Season::class);
     }
 }

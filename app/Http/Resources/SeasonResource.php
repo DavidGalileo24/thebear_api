@@ -18,7 +18,7 @@ class SeasonResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
-            'release_date' => $this->release_date
+            'release_date' => $this->release_date,
         ];
     }
 }

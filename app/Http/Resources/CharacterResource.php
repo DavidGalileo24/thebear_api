@@ -21,6 +21,7 @@ class CharacterResource extends JsonResource
             'gender' => $this->gender,
             'date_of_birth' => $this->date_of_birth,
             'job_position' => $this->job_position,
+            'season_debut' => new SeasonResource($this->whenLoaded('season')),
             'image' => ImageResource::make($this->whenLoaded('image')),
             'country' => new CountryResource($this->whenLoaded('country')),
             'description' => $this->description,
