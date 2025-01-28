@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class CharacterController extends Controller
 {
-    
     public function index()
     {
         $data = Character::orderBy('id', 'desc')->get();
@@ -53,7 +52,7 @@ class CharacterController extends Controller
             'season_id' => $request->seaason_id,
             'description' => $request->description,
         ]);
-        //$this->image->store($request->image, $character->id, Character::class);
+        // $this->image->store($request->image, $character->id, Character::class);
 
         return new CharacterResource($character);
     }
