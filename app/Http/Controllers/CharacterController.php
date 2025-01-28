@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class CharacterController extends Controller
 {
+    
     public function index()
     {
         $data = Character::orderBy('id', 'desc')->get();
@@ -24,6 +25,7 @@ class CharacterController extends Controller
 
     public function store(Request $request)
     {
+        $image = new ImageController;
         $data = Character::create([
             'fullname' => $request->fullname,
             'nickname' => $request->nickname,
@@ -31,8 +33,10 @@ class CharacterController extends Controller
             'date_of_birth' => $request->date_of_birth,
             'job_position' => $request->job_position,
             'country_id' => $request->country_id,
+            'season_id' => $request->season_id,
             'description' => $request->description,
         ]);
+        $image->store($request->image, $data->id, Character::class);
 
         return new CharacterResource($data);
     }
@@ -46,8 +50,10 @@ class CharacterController extends Controller
             'date_of_birth' => $request->date_of_birth,
             'job_position' => $request->job_position,
             'country_id' => $request->country_id,
+            'season_id' => $request->seaason_id,
             'description' => $request->description,
         ]);
+        //$this->image->store($request->image, $character->id, Character::class);
 
         return new CharacterResource($character);
     }
