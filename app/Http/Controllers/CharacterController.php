@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CharacterResource;
+use App\Mail\TestMailQueue;
 use App\Models\Character;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CharacterController extends Controller
 {
@@ -62,5 +64,11 @@ class CharacterController extends Controller
         $character->delete();
 
         return response()->json(['message' => 'Deleted!']);
+    }
+
+    public function testMail(Request $request){
+        $data = 'Hi mail';
+        Mail::to($request->email)->queue(new TestMailQueue($data));
+        return response()->json(['message' => 'Sending mail successfully!']);
     }
 }

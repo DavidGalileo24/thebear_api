@@ -9,6 +9,8 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+Route::get('/test-mail', [CharacterController::class, 'testMail']);
+
 Route::apiResource('/characters', CharacterController::class);
 
 Route::apiResource('/seasons', SeasonController::class);
