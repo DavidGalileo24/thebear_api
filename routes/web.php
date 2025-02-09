@@ -8,9 +8,9 @@ use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome');
-});
+})->name('home');
 
-Route::get('/docs', [WebController::class, 'doc']);
+Route::get('/docs', [WebController::class, 'doc'])->name('docs');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

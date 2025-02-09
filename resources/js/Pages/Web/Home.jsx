@@ -1,5 +1,6 @@
 import PrimaryButton from "@/Components/PrimaryButton";
 import SecondaryButton from "@/Components/SecondaryButton";
+import { Link, usePage } from '@inertiajs/react';
 
 const Home = () => {
     return (
@@ -18,8 +19,13 @@ const Home = () => {
                             White, which has three seasons.
                         </p>
                         <div className="flex justify-center mt-5">
-                            <PrimaryButton className="mx-1">Get started</PrimaryButton>
-                            <SecondaryButton className="mx-1">Repository</SecondaryButton>
+                            
+                            <Link href="/docs">
+                                <PrimaryButton className="mx-1">Get started</PrimaryButton>
+                            </Link>
+                            <a href="https://github.com/DavidGalileo24/thebear_api" target="_blank" rel="noopener noreferrer">
+                                <SecondaryButton className="mx-1">Repository</SecondaryButton>
+                            </a>
                         </div>
                     </div>
                 </div>
