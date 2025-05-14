@@ -66,9 +66,11 @@ class CharacterController extends Controller
         return response()->json(['message' => 'Deleted!']);
     }
 
-    public function testMail(Request $request){
+    public function testMail(Request $request)
+    {
         $data = 'Hi mail';
         Mail::to($request->email)->queue(new TestMailQueue($data));
+
         return response()->json(['message' => 'Sending mail successfully!']);
     }
 }
